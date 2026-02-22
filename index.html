@@ -123,7 +123,7 @@ function gjejShumen() {
           <div class="code-content">
             <h4 class="code-header">Kodi</h4>
             <pre class="kodi"><code>
-&lt;label&gt;Numri i klikimeve: &lt;input type="number" id="numri3" value="0"/&gt;&lt;/label&gt;
+&lt;label&gt;Numri i klikimeve: &lt;input type="number" id="numri3" value="0" disabled/&gt;&lt;/label&gt;
 &lt;button onclick="rritMe1()"&gt;Shto&lt;/button&gt;
 &lt;button onclick="vendosVlere(0)"&gt;Nga fillmi&lt;/button&gt;
 &lt;script&gt;
@@ -145,8 +145,8 @@ function rritMe1() {
           <div class="view-content">
             <h4 class="output-header">Output</h4>
             <div class="output">
-              <button onclick="rritMe1()">Shto</button>
-              <label>Numri i klikimeve: <input type="number" id="numri3" value="0" /></label>
+              <label>Numri i klikimeve: <input type="number" id="numri3" value="0" disabled /></label>
+              <button onclick="rritMe1()">Shto</button>              
               <button onclick="vendosVlere(0)">Nga fillmi</button>
             </div>
           </div>
@@ -470,6 +470,7 @@ function pershendetja() {
     <script src="js/ushtrimi10.js"></script>
   </body>
 </html>
+
 
 
 
