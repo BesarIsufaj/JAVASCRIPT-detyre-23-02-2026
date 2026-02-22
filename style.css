@@ -1,0 +1,196 @@
+:root {
+  /* Background */
+  --bg-primary: #f5f2f2; /* Gri i lehtë - background kryesor */
+  --bg-secondary: #2b2a2a; /* E errët - secondary background */
+  --bg-other-1: #faebd7;
+
+  /* Text */
+  --text-primary: #2b2a2a; /* E errët - tekst kryesor */
+  --text-secondary: #f5f2f2; /* Gri i lehtë - tekst secondary */
+
+  /* Accent */
+  --accent-primary: #feb05d; /* Portokall */
+  --accent-secondary: #283c70; /* Bojeqielli */
+
+  --border-color-primary: chocolate;
+  --border-color-secondary: #283c70;
+  /* background-color: antiquewhite; */
+}
+
+html {
+  background-color: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  border: 5px double var(--accent-secondary);
+}
+
+header,
+footer {
+  background-color: var(--accent-secondary);
+  /* height: 50px; */
+  color: var(--bg-primary);
+  text-align: center;
+  padding: 10px;
+}
+
+main {
+  margin: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  align-items: center;
+}
+
+.container details {
+  padding: 2px;
+}
+
+.container details:nth-child(odd) {
+  border: 2px solid var(--accent-secondary);
+  border: 2px solid var(--accent-secondary);
+  background-color: var(--bg-primary);
+}
+
+.container details:nth-child(even) {
+  border: 2px solid var(--border-color-primary);
+  background-color: var(--bg-other-1);
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--bg-primary);
+  /* border: 1px solid var(--accent-primary); */
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 4px rgba(254, 176, 93, 0.1),
+    0 4px 20px rgba(43, 42, 42, 0.1);
+}
+
+.code-content {
+  border: 2px solid white;
+  border-radius: 2px;
+  min-width: 400px;
+  flex: 1;
+  padding: 0 15px;
+  width: 300px;
+  word-wrap: break-word;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  max-width: 100%;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.view-content {
+  border: 2px solid var(--text-primary);
+  min-width: 300px;
+  flex: 1;
+  padding: 0 15px;
+}
+
+.output-header {
+  text-align: center;
+  background-color: var(--text-primary);
+  margin: 0 -15px;
+  padding: 5px;
+  color: var(--text-secondary);
+}
+
+.output {
+  margin-top: 20px;
+}
+
+.code-header {
+  text-align: center;
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
+  margin: -2px -15px;
+  padding: 5px;
+}
+
+.titull-kerkese {
+  color: var(--text-primary);
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.kerkesa {
+  font-weight: 600;
+}
+
+pre.kodi {
+  font-style: italic;
+}
+
+button {
+  background-color: var(--accent-secondary);
+  color: white;
+  font-size: large;
+  font-family: serif;
+  padding: 10px;
+  border: double;
+  border-radius: 10px;
+}
+
+input {
+  height: 35px;
+  width: 200px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 2px 10px;
+}
+
+/* 
+Ndryshimi i Marker-it
+*/
+/* Fsheh marker-in default */
+summary::marker {
+  content: none !important;
+}
+
+/* Shto gisht tregues custom */
+summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+}
+
+summary:nth-child(even) {
+  color: var(--text-primary);
+}
+
+summary:nth-child(odd) {
+  color: var(--accent-secondary);
+  background: linear-gradient(
+    135deg,
+    var(--border-color-secondary) 0%,
+    /* var(--accent-primary)  */ var(--bg-primary) 20%,
+    var(--bg-other-1) 85%,
+    #f5f2f2 100%
+  );
+}
+
+summary::before {
+  content: "👉";
+  font-size: 1.2em;
+  flex-shrink: 0;
+}
+
+/* Kur hapet details, ndrysho ikonën */
+details[open] summary::before {
+  content: "👇"; 
+}

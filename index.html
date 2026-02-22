@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Detyre Shtepie JS</title>
+  </head>
+  <body>
+    <header>
+      <h1>Detyrë shtëpie - datë 23.02.2026</h1>
+    </header>
+    <main class="container">
+      <!-- USHTRIMI 1 -->
+      <details id="ushtrim1">
+        <summary>
+          <h3 class="titull-kerkese">
+            Ushtrimi 1: Ndryshimi i Tekstit me Buton
+          </h3>
+          <p class="kerkesa">
+            Krijo një faqe HTML me një paragraf dhe një buton. Kur përdoruesi
+            klikon butonin, teksti i paragrafit duhet të ndryshojë në:
+            "JavaScript po funksionon!"
+          </p>
+          <p>▸ addEventListener ▸ innerHTML / textContent ▸ HTML bazë</p>
+        </summary>
+        <div class="content">
+          <div class="code-content">
+            <h4 class="code-header">Kodi</h4>
+
+            <pre class="kodi"><code>
+                <!-- kodi ketu -->
+&lt;p id="paragraf1"&gt;Shtypni butonin për të ndryshuar tekstin&lt;/p&gt;
+&lt;button id="btn-ndryshoText"&gt;Butoni&lt;/button&gt;
+
+&lt;script&gt;
+  let paragrafi = document.getElementById("paragraf1")
+  let btn = document.getElementById("btn-ndryshoText")
+  
+  btn.addEventListener("click", () => {
+  paragrafi.textContent = "JavaScript po funksionon!";
+});
+&lt;/script&gt;
+</code></pre>
+          </div>
+          <div class="view-content">
+            <h4 class="output-header">Output</h4>
+            <div class="output">
+              <p id="paragraf1">Shtypni butonin për të ndryshuar tekstin</p>
+              <button id="btn-ndryshoText">Butoni</button>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- USHTRIMI 2 -->
+      <details id="ushtrim2">
+        <summary>
+          <h2 class="titull-kerkese">Ushtrimi 2: Mbledhja e Dy Numrave</h2>
+          <p class="kerkesa">
+            Krijo dy fusha input për numra dhe një buton Llogarit. Kur klikohet
+            butoni, programi duhet të shfaqë shumën e dy numrave.
+          </p>
+          <p>▸ input type='number'</p>
+        </summary>
+        <div class="content">
+          <div class="code-content">
+            <h4 class="code-header">Kodi</h4>
+            <pre class="kodi"><code>
+&lt;label&gt;Numër 1:&lt;input type="number" name="numer1" id="numer1"/&gt;&lt;/label&gt;&lt;/br&gt;
+&lt;label&gt;Numër 2: &lt;input type="number" name="numer2" id="numer2"/&gt;&lt;/label&gt;&lt;/br&gt;
+&lt;button onclick="gjejShumen()">Llogarit shumën&lt;/button&gt;
+&lt;p id="shuma">&lt;/p&gt;
+
+&ltscript&gt;
+let nr1 = document.getElementById("numer1");
+let nr2 = document.getElementById("numer2");
+let paragraf = document.getElementById("shuma");
+
+function gjejShumen() {
+  let rezultati = isNaN(nr1.valueAsNumber) ? 0
+   : nr1.valueAsNumber;
+  rezultati += isNaN(nr2.valueAsNumber) ? 0
+   : nr2.valueAsNumber;
+
+  paragraf.textContent = "Shuma është: " + rezultati;
+}
+&lt;/script&gt;
+
+                </code></pre>
+          </div>
+          <div class="view-content">
+            <h4 class="output-header">Output</h4>
+            <div class="output">
+              <label>
+                >Numër 1:
+                <input type="number" name="numer1" id="numer1" /> </label
+              ><br />
+
+              <label>
+                >Numër 2:
+                <input type="number" name="numer2" id="numer2" /> </label
+              ><br />
+
+              <button onclick="gjejShumen()">Llogarit shumën</button>
+              <p id="shuma"></p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- USHTRIMI 3 -->
+      <details id="ushtrim3">
+        <summary>
+          <h2 class="titull-kerkese">Ushtrimi 3: Numëruesi i Klikimeve</h2>
+          <p class="kerkesa">
+            Krijo një buton dhe një numër që fillon nga 0. Sa herë që klikohet
+            butoni, numri duhet të rritet me 1 dhe të shfaqet në faqe.
+          </p>
+          <p>▸Variabla & gjendje ▸ Rritja me ++ ▸ input type='number'</p>
+        </summary>
+        <div class="content">
+          <div class="code-content">
+            <h4 class="code-header">Kodi</h4>
+            <pre class="kodi"><code>
+&lt;button onclick="rritMe1()">Shto me 1&lt;/button&gt;
+&lt;h3&gt; Numri i klikimeve:&lt;span id="numri3"&gt; &lt;/span&gt; &lt;/h3&gt;
+&lt;button onclick="reset()"&gt;X&lt;/button&gt;
+&lt;script&gt;
+let numri = 0;
+
+function reset() {
+  numri = 0;
+  let spanNumri = document.getElementById("numri3");
+  spanNumri.textContent = numri;
+}
+
+function rritMe1() {
+  numri++;
+  let spanNumri = document.getElementById("numri3");
+  spanNumri.textContent = numri;
+}
+
+&lt;/script&gt;
+                </code></pre>
+          </div>
+          <div class="view-content">
+            <h4 class="output-header">Output</h4>
+            <div class="output">
+              <button onclick="rritMe1()">Shto me 1</button>
+              <h3>Numri i klikimeve: <span id="numri3"></span></h3>
+              <button onclick="reset()">Nga fillmi</button>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- USHTRIMI 4 -->
+      <details id="ushtrim4">
+        <summary>
+          <h2 class="titull-kerkese">Ushtrimi 4: Çift apo Tek?</h2>
+          <p class="kerkesa">
+            Krijo një input ku përdoruesi shkruan një numër. Programi duhet të
+            kontrollojë dhe të shfaqë nëse numri është çift apo tek.
+          </p>
+          <p>▸ Operatori modulo (%) ▸ if / else ▸ Leximi i input</p>
+        </summary>
+        <div class="content">
+          <div class="code-content">
+            <h4 class="code-header">Kodi</h4>
+            <pre class="kodi"><code>
+&lt;h4&gt; Shkruaj një numër dhe kontrollo nëse është çift apo tek&lt;/h4&gt; 
+&lt;input type="number" name="numer4" id="numer4"&gt;
+&lt;p id="paragraf4"&gt;&lt;/p&gt; 
+
+&ltscript&gt;
+let input4 = document.getElementById("numer4");
+let p = document.getElementById("paragraf4");
+
+function check() {
+  console.log("enter function");
+  let mesazhi = "";
+  let numer = input4.valueAsNumber;
+  if (numer % 2 == 0) {
+    mesazhi = "Numri " + numer + " është ÇIFT";
+  } else {
+    mesazhi = "Numri " + numer + " është TEK";
+  }
+  p.textContent = mesazhi;
+}
+&lt;/script&gt;
+ </code></pre>
+          </div>
+          <div class="view-content">
+            <h4 class="output-header">Output</h4>
+            <div class="output">
+              <h4>Shkruaj një numër dhe kontrollo nëse është çift apo tek</h4>
+              <input type="number" name="numer4" id="numer4" />
+              <p id="paragraf4"></p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- USHTRIMI 5 -->
+      <details id="ushtrim5">
+        <summary>
+          <h2 class="titull-kerkese">
+            Ushtrimi 5: Ndryshimi i Ngjyrës së Sfondit
+          </h2>
+          <p class="kerkesa">
+            Krijo një buton që, kur klikohet, ndryshon ngjyrën e sfondit të
+            faqes (p.sh. nga e bardhë në blu).
+          </p>
+          <p>document.body.style ▸ Ngjyrat CSS</p>
+        </summary>
+        <div class="content">
+          <div class="code-content">
+            <h4 class="code-header">Kodi</h4>
+            <pre class="kodi"><code>
+&lt;div class="output"&gt;
+  &lt;button onclick="ndryshoSfond()"&gt;Ndrysho background&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+let container5 = document.getElementById("body-color")
+
+function ndryshoSfond(){
+container5.style.backgroundColor="yellow"
+}
+&lt;/script&gt;
+                </code></pre>
+          </div>
+          <div class="view-content" id="body-color">
+            <h4 class="output-header">Output</h4>
+            <div class="output">
+              <button onclick="ndryshoSfond()">Ndrysho background</button>
+            </div>
+          </div>
+        </div>
+      </details>
+      <!-- USHTRIMI 6 -->
+      <details id="ushtrim6">
+        <summary>
+          <h2 class="titull-kerkese">Ushtrimi 6: Lista Dinamike</h2>
+          <p class="kerkesa">
+            Krijo një fushë input dhe një buton Shto. Teksti i shkruar në input
+            duhet të shtohet si element i ri në një listë (ul).
+          </p>
+          <p>createElement('li') ▸ appendChild() ▸ Pastrim input</p>
+        </summary>
+        <div class="content">
+          <div class="code-content">
+            <h4 class="code-header">Kodi</h4>
+            <pre class="kodi"><code>
+&lt;h3&gt;Shto elementë në listë&lt;/h3&gt;
+&lt;input type="text" name="input6" id="input6"&gt;   
+&lt;button onclick="shtoItem()"&gt;Shto në listë &lt;/button&gt;
+&lt;ul id="list6"&gt;&lt;b&gt;Lista&lt;/b&gt;&lt;/ul&gt;
+
+&ltscript&gt;
+let itemText = document.getElementById("input6");
+let lista = document.getElementById("list6");
+
+function shtoItem() {
+  let item = document.createElement('li');
+  item.textContent = itemText.value;
+  lista.appendChild(item);
+  itemText.value = "";
+}
+&lt;/script&gt;
+
+                </code></pre>
+          </div>
+          <div class="view-content">
+            <h4 class="output-header">Output</h4>
+            <div class="output">
+              <h3>Shto elementë në listë</h3>
+              <input type="text" name="input6" id="input6" />
+              <button onclick="shtoItem()">Shto në listë</button>
+              <ul id="list6">
+                <b>Lista</b>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+      <!-- USHTRIMI 7 -->
+      <details id="ushtrim7">
+        <summary>
+          <h2 class="titull-kerkese">Validimi i Fjalëkalimit</h2>
+          <p class="kerkesa">
+            Krijo një fushë për fjalëkalim. Nëse fjalëkalimi ka më pak se 6
+            karaktere, shfaq mesazhin: "Fjalëkalimi është shumë i shkurtër" —
+            përndryshe: "Fjalëkalim i vlefshëm"
+          </p>
+          <p>▸ input type='password' ▸ Prona .length ▸ if / else</p>
+        </summary>
+        <div class="content">
+          <div class="code-content">
+            <h4 class="code-header">Kodi</h4>
+            <pre class="kodi"><code>
+&lt;label&gt;Pasword: &lt;input type="password" name="psw7" id="psw7" /&gt;&lt;/label&gt;
+&lt;p id="mesazh7"&gt;&lt;/p&gt;
+&lt;script&gt;
+let input7 = document.getElementById("psw7");
+let mesazh = document.getElementById("mesazh7");
+
+input7.addEventListener("input", function () {
+  if (input7.value.length < 6) {
+    mesazh.textContent = "Fjalëkalimi është shumë i shkurtër";
+    mesazh.style.color = "red";
+  } else {
+    mesazh.textContent = "Fjalëkalim i vlefshëm";
+    mesazh.style.color = "green";
+  }
+});
+&lt;/script&gt;
+                </code></pre>
+          </div>
+          <div class="view-content">
+            <h4 class="output-header">Output</h4>
+            <div class="output">
+              <label
+                >Pasword: <input type="password" name="psw7" id="psw7"
+              /></label>
+              <p id="mesazh7"></p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <!-- USHTRIMI 8 -->
+      <details id="ushtrim8">
+        <summary>
+          <h2 class="titull-kerkese">Ushtrimi 8: Numri Më i Madh</h2>
+          <p class="kerkesa">
+            Merr 3 numra nga përdoruesi dhe shfaq në faqe numrin më të madh.
+          </p>
+          <p>▸ Math.max() ▸ if / else if ▸ Tre inpute</p>
+        </summary>
+        <div class="content">
+          <div class="code-content">
+            <h4 class="code-header">Kodi</h4>
+            <pre class="kodi"><code>
+&lt;h3&gt;Jepni 3 numra dhe gjej më të madhin&lt;/h3&gt;
+&lt;label&gt;Numri 1: &lt;input type="number" id="num1" /&gt;&lt;/label&gt;&lt;br /&gt;
+&lt;label&gt;Numri 2: &lt;input type="number" id="num2" /&gt;&lt;/label&gt;&lt;br /&gt;
+&lt;label&gt;Numri 3: &lt;input type="number" id="num3" /&gt;&lt;/label&gt;&lt;br /&gt;
+&lt;button onclick="gjejMax()">Gjej Numrin më të Madh&lt;/button&gt;
+
+
+&lt;script&gt;
+function gjejMax() {
+  let n1 = parseFloat(document.getElementById("num1").value) || 0;
+  let n2 = parseFloat(document.getElementById("num2").value) || 0;
+  let n3 = parseFloat(document.getElementById("num3").value) || 0;
+
+  let maxNum = Math.max(n1, n2, n3);
+  document.getElementById("rezultati").textContent =
+    "Numri më i madh: " + maxNum;
+}
+&lt;/script&gt;
+                </code></pre>
+          </div>
+          <div class="view-content">
+            <h4 class="output-header">Output</h4>
+            <div class="output">
+              <h3>Jepni 3 numra dhe gjej më të madhin</h3>
+              <label>Numri 1: <input type="number" id="num1" /></label><br />
+              <label>Numri 2: <input type="number" id="num2" /></label><br />
+              <label>Numri 3: <input type="number" id="num3" /></label><br />
+
+              <button onclick="gjejMax()">Gjej Numrin më të Madh</button>
+
+              <h3 id="rezultati"></h3>
+            </div>
+          </div>
+        </div>
+      </details>
+      <!-- USHTRIMI 9 -->
+      <details id="ushtrim9">
+        <summary>
+          <h2 class="titull-kerkese">Ushtrimi 9: Cikli nga 1 deri në 10</h2>
+          <p class="kerkesa">
+            Përdor një cikël (for ose while) për të shfaqur numrat nga 1 deri në
+            10 (në faqe ose në console).
+          </p>
+          <p>▸ for / while cikël ▸ console.log() ▸ Iterim bazë</p>
+        </summary>
+        <div class="content">
+          <div class="code-content">
+            <h4 class="code-header">Kodi</h4>
+            <pre class="kodi"><code>
+&lt;button onclick="gjenero()">Gjenero numrat nga 1 në 10&lt;/button&gt;
+&lt;div id="numrat">&lt;/div&gt;
+&lt;script&gt;
+let div = document.getElementById("numrat");
+function gjenero() {
+  for (let numri = 1; numri <= 10; numri++) {
+    console.log(numri);
+    let p = document.createElement("p");
+    p.textContent = numri;
+    div.appendChild(p);
+  }
+}
+&lt;/script&gt;
+                </code></pre>
+          </div>
+          <div class="view-content">
+            <h4 class="output-header">Output</h4>
+            <div class="output">
+              <button onclick="gjenero()">Gjenero numrat nga 1 në 10</button>
+              <div id="numrat"></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <!-- USHTRIMI 10 -->
+      <details id="ushtrim10">
+        <summary>
+          <h2 class="titull-kerkese">Ushtrimi 10: Mesazhi i Mirëseardhjes</h2>
+          <p class="kerkesa">
+            Krijo një fushë ku përdoruesi shkruan emrin e tij dhe një buton. Kur
+            klikohet butoni, shfaq mesazhin: "Mirë se erdhe, [emri]!"
+          </p>
+          <p>▸ Leximi i tekstit ▸ Template literals / + ▸ DOM dinamik</p>
+        </summary>
+        <div class="content">
+          <div class="code-content">
+            <h4 class="code-header">Kodi</h4>
+            <pre class="kodi"><code>
+&lt;h3&gt;Shkruaj emrin:&lt;/h3&gt;
+&lt;input type="text" id="emri" /&gt;
+&lt;button onclick="pershendetja()"&gt;Gjenero mesazhin&lt;/button&gt;
+&lt;p id="mesazhi">&lt;/p&gt;
+
+&lt;script&gt;
+function pershendetja() {
+    let emri = document.getElementById("emri").value;
+    
+    let mesazhi = emri
+      ? `Mirë se erdhe, ${emri}!`
+      : "Shkruaj emrin!";
+
+      document.getElementById("mesazhi").textContent=mesazhi
+  }
+&lt;/script&gt;
+                </code></pre>
+          </div>
+          <div class="view-content">
+            <h4 class="output-header">Output</h4>
+            <div class="output">
+              <h3>Shkruaj emrin:</h3>
+              <input type="text" id="emri" />
+              <button onclick="pershendetja()">Gjenero mesazhin</button>
+              <p id="mesazhi"></p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </main>
+    <footer><p>&copy; 2026 Besar Isufaj</p></footer>
+    <script src="js/index.js"></script>
+    <script src="js/ushtrimi1.js"></script>
+    <script src="js/ushtrimi2.js"></script>
+    <script src="js/ushtrimi3.js"></script>
+    <script src="js/ushtrimi4.js"></script>
+    <script src="js/ushtrimi5.js"></script>
+    <script src="js/ushtrimi6.js"></script>
+    <script src="js/ushtrimi7.js"></script>
+    <script src="js/ushtrimi8.js"></script>
+    <script src="js/ushtrimi9.js"></script>
+    <script src="js/ushtrimi10.js"></script>
+  </body>
+</html>
