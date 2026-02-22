@@ -1,13 +1,11 @@
-let numri = 0;
+let input = document.getElementById("numri3")
+let numri3 = input.valueAsNumber ||0
 
-function reset() {
-  numri = 0;
-  let spanNumri = document.getElementById("numri3");
-  spanNumri.textContent = numri;
+function vendosVlere(nr){
+  numri3=nr;
+  input.value = numri3;
 }
-
 function rritMe1() {
-  numri++;
-  let spanNumri = document.getElementById("numri3");
-  spanNumri.textContent = numri;
+  numri3++;
+  vendosVlere(numri3)
 }
