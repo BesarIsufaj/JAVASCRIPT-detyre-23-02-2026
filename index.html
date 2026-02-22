@@ -123,22 +123,20 @@ function gjejShumen() {
           <div class="code-content">
             <h4 class="code-header">Kodi</h4>
             <pre class="kodi"><code>
-&lt;button onclick="rritMe1()">Shto me 1&lt;/button&gt;
-&lt;h3&gt; Numri i klikimeve:&lt;span id="numri3"&gt; &lt;/span&gt; &lt;/h3&gt;
-&lt;button onclick="reset()"&gt;X&lt;/button&gt;
+&lt;label&gt;Numri i klikimeve: &lt;input type="number" id="numri3" value="0"/&gt;&lt;/label&gt;
+&lt;button onclick="rritMe1()"&gt;Shto&lt;/button&gt;
+&lt;button onclick="vendosVlere(0)"&gt;Nga fillmi&lt;/button&gt;
 &lt;script&gt;
-let numri = 0;
+let input = document.getElementById("numri3")
+let numri3 = input.valueAsNumber ||0
 
-function reset() {
-  numri = 0;
-  let spanNumri = document.getElementById("numri3");
-  spanNumri.textContent = numri;
+function vendosVlere(nr){
+  numri3=nr;
+  input.value = numri3;
 }
-
 function rritMe1() {
-  numri++;
-  let spanNumri = document.getElementById("numri3");
-  spanNumri.textContent = numri;
+  numri3++;
+  vendosVlere(numri3)
 }
 
 &lt;/script&gt;
@@ -472,4 +470,5 @@ function pershendetja() {
     <script src="js/ushtrimi10.js"></script>
   </body>
 </html>
+
 
